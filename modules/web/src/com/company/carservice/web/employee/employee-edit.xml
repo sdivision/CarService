@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.carservice.web.employee.EmployeeEdit"
+        datasource="employeeDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.carservice.web.employee">
+    <dsContext>
+        <datasource id="employeeDs"
+                    class="com.company.carservice.entity.Employee"
+                    view="employee-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="employeeDs">
+            <column width="350px">
+                <field property="firstName"/>
+                <field property="lastName"/>
+                <field property="birthDate"/>
+                <field property="email"/>
+                <field property="salary"/>
+                <field property="center"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

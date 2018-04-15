@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.carservice.web.repair.RepairEdit"
+        datasource="repairDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.carservice.web.repair">
+    <dsContext>
+        <datasource id="repairDs"
+                    class="com.company.carservice.entity.Repair"
+                    view="repair-view"/>
+        <collectionDatasource id="carServiceCentersDs"
+                              class="com.company.carservice.entity.CarServiceCenter"
+                              view="carServiceCenter-view">
+            <query>
+                <![CDATA[select e from carservice$CarServiceCenter e]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="employeesDs"
+                              class="com.company.carservice.entity.Employee"
+                              view="employee-view">
+            <query>
+                <![CDATA[select e from carservice$Employee e
+where e.center.id = :ds$carServiceCentersDs]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="repairDs">
+            <column width="350px">
+                <field property="description"
+                       rows="5"/>
+                <field datasource="repairDs"
+                       optionsDatasource="carServiceCentersDs"
+                       property="center"/>
+                <field datasource="repairDs"
+                       optionsDatasource="employeesDs"
+                       property="employee"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

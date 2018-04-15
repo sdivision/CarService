@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.carservice.web.city.CityBrowse"
+        focusComponent="citiesTable"
+        lookupComponent="citiesTable"
+        messagesPack="com.company.carservice.web.city">
+    <dsContext>
+        <groupDatasource id="citiesDs"
+                         class="com.company.carservice.entity.City"
+                         view="_local">
+            <query>
+                <![CDATA[select e from carservice$City e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="citiesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="citiesTable"
+                datasource="citiesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="citiesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="defaultCity"/>
+                <column id="name"/>
+                <column id="code"/>
+            </columns>
+            <rows datasource="citiesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="citiesTable.create"/>
+                <button id="editBtn"
+                        action="citiesTable.edit"/>
+                <button id="removeBtn"
+                        action="citiesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

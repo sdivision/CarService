@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/carservice/screens.xml"/>
+    <screen id="carservice$Company.browse"
+            template="com/company/carservice/web/company/company-browse.xml"/>
+    <screen id="carservice$Company.edit"
+            template="com/company/carservice/web/company/company-edit.xml"/>
+    <screen id="carservice$Individual.browse"
+            template="com/company/carservice/web/individual/individual-browse.xml"/>
+    <screen id="carservice$Individual.edit"
+            template="com/company/carservice/web/individual/individual-edit.xml"/>
+    <screen id="carservice$CarServiceCenter.browse"
+            template="com/company/carservice/web/carservicecenter/car-service-center-browse.xml"/>
+    <screen id="carservice$CarServiceCenter.edit"
+            template="com/company/carservice/web/carservicecenter/car-service-center-edit.xml"/>
+    <screen id="carservice$Employee.edit"
+            template="com/company/carservice/web/employee/employee-edit.xml"/>
+    <screen id="carservice$Repair.edit"
+            template="com/company/carservice/web/repair/repair-edit.xml"/>
+    <screen id="carservice$Customer.browse"
+            template="com/company/carservice/web/customer/customer-browse.xml"/>
+    <screen id="carservice$City.browse"
+            template="com/company/carservice/web/city/city-browse.xml"/>
+    <screen id="carservice$City.edit"
+            template="com/company/carservice/web/city/city-edit.xml"/>
+    <screen id="carservice$Repair.browse"
+            template="com/company/carservice/web/repair/repair-browse.xml"/>
+    <screen id="carservice$Employee.browse"
+            template="com/company/carservice/web/employee/employee-browse.xml"/>
+</screen-config>
